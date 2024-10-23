@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale-1.0">
     <title>Tier Maker</title>
+    <style>
 
       :root {
         --color-s: #ff7f80;
@@ -116,6 +117,14 @@
       }
     </style>
 
+    <script type="module">
+      const addButton = document.querySelector('#add-image-button')
+      const imageInput = document.querySelector('#input-image')
+
+      addButton.addEventListener('click', () => {
+        imageInput.click()
+      })
+    </script>
   </head>
 
   <body>
