@@ -248,6 +248,35 @@
         sourceContainer = null
       }
 
+      resetButton.addEventListener('click', () => {
+        const items = $$('.tier .item-image')
+
+        items.forEach(item => {
+          item.remove()
+          itemsSection.appendChild(item)
+        })
+      })
+
+      saveButton.addEventListener('click', () => {
+        const tierContainer = $('.tier')
+        const canvas = document.createElement('canvas')
+        const ctx = canvas.getContext('2d')
+
+        import('https://cdn.jsdelivr.net/npm/html2canvas-pro@1.5.8/+esm')
+          .then(({ default: html2canvas }) => {
+            html2canvas(tierContainer).then(canvas => {
+              ctx.drawImage(canvas, 0, 0)
+              const imgURL = canvas.toDataURL('img/png')
+
+              const downloadLink = document.createElement('a')
+              downloadLink.download = 'tier-image.png'
+              downloadLink.href = imgURL
+              downloadLink.click()
+            })
+          })
+
+      })
+
     </script>
 
   </head>
