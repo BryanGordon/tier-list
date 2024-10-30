@@ -121,6 +121,12 @@
         height: 200px;
         margin-bottom: 100px;
         display: flex;
+        flex-wrap: wrap;
+
+        &.drag-files {
+          background: #965f;
+          border-style: dashed;
+        }
       }
 
       .item-image {
@@ -141,8 +147,11 @@
       const $ = el => document.querySelector(el)
       const $$ = el => document.querySelectorAll(el)
 
+
       const imageInput = $('#input-image')
       const itemsSection = $('#selector-items')
+      const resetButton = $('#reset-tier-button')
+      const saveButton = $('#save-tier-button')
 
       function createItem (src) {
         const imgElement = document.createElement('img')
