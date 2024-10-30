@@ -187,9 +187,12 @@
         row.addEventListener('dragleave', handleDragLeave)
       })
 
+      itemsSection.addEventListener('drop', handleDrop),
+      itemsSection.addEventListener('dragover', handleDragOver)
+      itemsSection.addEventListener('dragleave', handleDragLeave)
+
       function handleDrop (event) {
         event.preventDefault()
-
         const { currentTarget, dataTransfer } = event
       }
 
